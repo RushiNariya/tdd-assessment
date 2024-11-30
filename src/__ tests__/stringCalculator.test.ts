@@ -40,4 +40,12 @@ describe('string calculator test cases', () => {
   test('number bigger than 1000 should be ignored.', () => {
     expect(stringCalculator('1,2,1001')).toBe(3);
   });
+
+  test('Delimiters can be of any length should be handled.', () => {
+    expect(stringCalculator('//[***]\n1***2***3”')).toBe(3);
+  });
+
+  test('Allow multiple delimiters.', () => {
+    expect(stringCalculator('//[*][%]\n1*2%3')).toBe(6);
+  });
 });

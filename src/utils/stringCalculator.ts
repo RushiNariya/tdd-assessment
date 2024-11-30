@@ -10,7 +10,11 @@ export default function stringCalculator(numbers: string) {
     const delimiterEnd = numArr.indexOf('\n');
     const dynamicDelimiters = numArr.slice(2, delimiterEnd);
 
-    delimiters = [dynamicDelimiters];
+    if (dynamicDelimiters.startsWith('[') && dynamicDelimiters.endsWith(']')) {
+      delimiters = dynamicDelimiters.slice(1, -1).split('][');
+    } else {
+      delimiters = [dynamicDelimiters];
+    }
 
     numArr = numArr.slice(delimiterEnd + 1);
   }
