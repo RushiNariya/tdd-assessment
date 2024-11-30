@@ -3,9 +3,17 @@ export default function stringCalculator(numbers: string) {
     return 0;
   }
 
-  const delimiters = [',', '\n'];
+  let delimiters = [',', '\n'];
+  let numArr = numbers;
 
-  const numArr = numbers;
+  if (numArr.startsWith('//')) {
+    const delimiterEnd = numArr.indexOf('\n');
+    const dynamicDelimiters = numArr.slice(2, delimiterEnd);
+
+    delimiters = [dynamicDelimiters];
+
+    numArr = numArr.slice(delimiterEnd + 1);
+  }
 
   const splittedString = splitString(numArr, delimiters);
 

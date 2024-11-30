@@ -24,4 +24,12 @@ describe('string calculator test cases', () => {
   test('add \n as delimiter in input string', () => {
     expect(stringCalculator('1\n2,3')).toBe(6);
   });
+
+  test('handle different delimiter (;) in input string', () => {
+    expect(stringCalculator('//;\n1;2')).toBe(3);
+  });
+
+  test('handle different delimiter (#) in input string', () => {
+    expect(stringCalculator('//#\n1#2#3')).toBe(6);
+  });
 });
