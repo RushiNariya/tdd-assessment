@@ -32,4 +32,8 @@ describe('string calculator test cases', () => {
   test('handle different delimiter (#) in input string', () => {
     expect(stringCalculator('//#\n1#2#3')).toBe(6);
   });
+
+  test('handle negative number to throw an exception', () => {
+    expect(() => stringCalculator('1,2,-3')).toThrow('negative numbers not allowed: -3');
+  });
 });

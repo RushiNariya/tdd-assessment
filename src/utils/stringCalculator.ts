@@ -17,6 +17,11 @@ export default function stringCalculator(numbers: string) {
 
   const splittedString = splitString(numArr, delimiters);
 
+  const negativeNumArr = splittedString.filter((item) => +item < 0);
+
+  if (negativeNumArr.length > 0) {
+    throw new Error(`negative numbers not allowed: ${negativeNumArr.join(',')}`);
+  }
   return splittedString
     .map((item) => +item)
     .reduce((prev, curr) => prev + Number(curr), 0);
