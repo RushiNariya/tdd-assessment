@@ -24,6 +24,7 @@ export default function stringCalculator(numbers: string) {
   }
   return splittedString
     .map((item) => +item)
+    .filter((item) => item < 1000)
     .reduce((prev, curr) => prev + Number(curr), 0);
 }
 
