@@ -20,4 +20,8 @@ describe('string calculator test cases', () => {
   test('pass any amonut of numbers in input string', () => {
     expect(stringCalculator('1,2,3,4')).toBe(10);
   });
+
+  test('add \n as delimtier in input string', () => {
+    expect(stringCalculator('1\n2,3')).toBe(6);
+  });
 });
