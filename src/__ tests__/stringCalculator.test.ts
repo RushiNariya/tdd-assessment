@@ -16,4 +16,8 @@ describe('string calculator test cases', () => {
   test('pass multiple number string', () => {
     expect(stringCalculator('1,2')).toBe(3);
   });
+
+  test('pass any amonut of numbers in input string', () => {
+    expect(stringCalculator('1,2,3,4')).toBe(10);
+  });
 });
