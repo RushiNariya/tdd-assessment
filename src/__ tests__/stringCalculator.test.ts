@@ -17,11 +17,11 @@ describe('string calculator test cases', () => {
     expect(stringCalculator('1,2')).toBe(3);
   });
 
-  test('pass any amonut of numbers in input string', () => {
+  test('pass any amount of numbers in input string', () => {
     expect(stringCalculator('1,2,3,4')).toBe(10);
   });
 
-  test('add \n as delimtier in input string', () => {
+  test('add \n as delimiter in input string', () => {
     expect(stringCalculator('1\n2,3')).toBe(6);
   });
 });
